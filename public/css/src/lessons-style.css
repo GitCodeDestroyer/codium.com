@@ -1,0 +1,323 @@
+/* NAVIGATION */
+
+.nav {
+    height: 60px;
+    width: 100%;
+    top: 0;
+    line-height: 60px;
+    padding: 0 3%;
+    z-index: 10000;
+    position: absolute;
+}
+
+.nav .logo {
+    float: left;
+    position: absolute;
+    z-index: 1000;
+}
+
+.nav .logo img {
+    height: 45px;
+    margin-top: 7.5px;
+}
+
+.nav .logo h1 {
+    font-family: 'OCR-A BT', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-transform: uppercase;
+    float: right;
+    color: #FFF;
+    margin-top: 0px;
+    margin-left: 10px;
+}
+
+.nav .menu {
+    width: calc(100% - 188.5px);
+    text-align: center;
+    display: block;
+    margin: 0 auto;
+}
+
+.nav .menu a {
+    padding: 15px 10px;
+    color: #FFFFFF;
+    font-size: 18px;
+    border-bottom: 2px solid transparent;
+    transition: all .1s;
+    margin: 0 10px;
+}
+
+.nav .menu a.active,
+.nav .menu a:hover {
+    border-bottom: 2px solid #FFFFFF;
+}
+
+.nav .menu span {
+    position: absolute;
+    font-size: 22px;
+    line-height: 63px;
+}
+
+.nav .account {
+    position: absolute;
+    top: 8px;
+    right: 3%;
+}
+
+.nav .account img {
+    height: 45px;
+    border-radius: 50%;
+    background: #FFF;
+    box-shadow: 0 3px 20px rgba(0, 0, 0, .1);
+    cursor: pointer;
+}
+
+.account-overlay {
+    width: 100%;
+    height: 100%;
+    display: none;
+    position: fixed;
+    top: 60px;
+    left: 0;
+}
+
+.account-popup .triangle {
+    border-bottom: 13px solid #FFF;
+    border-right: 10px solid transparent;
+    border-left: 10px solid transparent;
+    position: absolute;
+    top: -13px;
+    right: 12px;
+}
+
+.account-popup {
+    position: absolute;
+    height: 300px;
+    width: 220px;
+    top: 60px;
+    right: 3%;
+    background: #FFF;
+    border-radius: 5px;
+    box-shadow: 0 -3px 20px rgba(0,0,0,.07), 0 3px 6px rgba(0,0,0,.05);
+    display: none;
+}
+
+.account-popup a {
+    color: #3C3F50;
+    height: 60px;
+    display: block;
+    padding: 0 41px;
+    border-bottom: 1px solid #F2F2F2;
+    border-left: 2px solid transparent;
+    transition: all .2s;
+}
+
+.account-popup a span {
+    position: absolute;
+    margin-top: 22px;
+    left: 18px;
+}
+
+.account-popup a:hover {
+    border-left: 2px solid #E9908A;
+}
+
+.hero {
+    padding-top: 60px;
+    height: 580px;
+    background-size: 10%, 10%, auto;
+    background-position: 0 0, 100% 0;
+    color: #FFF;
+    text-align: center;
+    padding: 130px 0;
+}
+
+.hero h1 {
+    font-size: 50px;
+    margin-top: 20px;
+}
+
+.hero p {
+    font-size: 20px;
+    margin: 30px auto;
+    width: 70%;
+}
+
+.hero .btn {
+    width: max-content;
+    margin: 0 auto;
+}
+
+.gradient-mask {
+    height: 100px;
+    width: 100%;
+    position: absolute;
+    margin-top: -100px;
+    background: linear-gradient(-4deg, #FDFCFC 50%, transparent 50%);
+}
+
+/* TABS */
+
+.tabs {
+    font-size: 22px;
+    padding: 50px 3%;
+}
+
+.tabs .tab {
+    display: inline-block;
+    margin: 0 10px;
+    cursor: pointer;
+}
+
+.tabs .tab::selection {
+    background: transparent;
+}
+
+.tabs .tabs-bottom {
+    height: 2px;
+    background: #3C3F50;
+    width: 173px;
+    margin-left: 7px;
+    margin-top: 10px;
+    transition: all .3s;
+}
+
+.syllabus-section {
+    padding-bottom: 100px;
+}
+
+/* LESSONS */
+
+.lessons {
+    width: 61%;
+    margin-left: 3%;
+}
+
+.v-line {
+    width: 3px;
+    background: #d1d4dd;
+    height: 780px;
+    position: absolute;
+    margin-top: 75px;
+    margin-left: 40px;
+    z-index: -1;
+}
+
+.lesson-line {
+    height: 165px;
+    padding-left: 83px;
+    transition: all .3s;
+    opacity: .9;
+}
+
+.lesson-line:hover {
+    background: #FFF;
+    box-shadow: 0 7px 20px rgba(0, 0, 0, 0.05);
+    opacity: 1;
+}
+
+.lesson-line .circle {
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    background: #d1d4dd;
+    border: 2px solid #FFFFFF;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .15);
+    position: absolute;
+    margin-left: -56px;
+    margin-top: 68px;
+    opacity: 1;
+    color: #FFFFFF;
+    line-height: 26px;
+    text-align: center;
+    font-size: 15px;
+}
+
+.lesson-line.unlock .circle {
+    background: #f59e79;
+}
+
+.lesson-line a {
+    color: #3C3F50;
+}
+
+.lesson-line .num {
+    float: left;
+    font-size: 80px;
+    line-height: 150px;
+    color: #dcdee2;
+}
+
+.lesson-line .text {
+    float: left;
+    margin-left: 40px;
+    margin-top: 42px;
+}
+
+.lesson-line .text h3 {
+    font: 300 26px "Segoe UI Black" !important;
+    text-overflow: ellipsis;
+}
+
+.lesson-line .text p {
+    font: 300 18px "Segoe UI Light" !important;
+    margin-top: 8px;
+}
+
+.lesson-line .text .red-text {
+    margin-left: 10px;
+}
+
+.progress {
+    position: absolute;
+    height: 500px;
+    width: 30%;
+    left: 67%;
+    margin-top: 143px;
+    text-align: center;
+    background: #FFFFFF;
+    box-shadow: 0 7px 20px rgba(0, 0, 0, .05);
+    padding: 20px 30px;
+    overflow: hidden;
+    border-radius: 3px;
+}
+
+.progress #spark {
+    margin-top: 100px;
+}
+
+.progress p {
+    font-size: 20px;
+    margin-top: 30px;
+}
+
+.progress small {
+    margin-left: -74px;
+    position: absolute;
+    margin-top: 450px;
+    font-size: 14px;
+    color: #ccc;
+}
+
+.menu-btn {
+    display: none;
+    color: #FFF;
+}
+
+/* About */
+
+.about {
+    display: none;
+    width: 61%;
+    margin-left: 3%;
+}
+
+.about p {
+    margin-bottom: 70px;
+}
+
+@media screen and (max-width: 900px) {
+    .progress {
+        width: 240px;
+        left: 630px;
+    }
+}

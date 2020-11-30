@@ -1,0 +1,1 @@
+$(document).ready(function(){$(document).on("keydown",function(n){n.KeyCode}),$(".errors .email-error").click(function(){$(".input .email").focus()}),$(".submit-btn").click(function(){$(".errors").load("../backend/account/login-handling.php",{email:$(".email").val(),password:$(".password").val(),always_signed:$("#always-signed").val()})})});

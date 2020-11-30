@@ -1,0 +1,1 @@
+var dev=0;$(document).ready(function(){$(".thumb-1").click(thumbClick(1,2,3)),$(".thumb-2").click(thumbClick(2,1,3)),$(".thumb-3").click(thumbClick(3,1,2))});

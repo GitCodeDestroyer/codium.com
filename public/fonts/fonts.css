@@ -1,0 +1,15 @@
+@font-face {
+	font-family: "OCR-A BT";
+	src: url("../fonts/OCR-A-BT.ttf");
+	src: url("../fonts/OCR-A-BT.ttf") format("truetype");
+	font-style: normal;
+	font-weight: normal;
+}
+
+@font-face {
+	font-family: "Segoe UI Light";
+	src: url("../fonts/segoeuil.ttf");
+	src: url("../fonts/segoeuil.ttf") format("truetype");
+	font-style: normal;
+	font-weight: lighter;
+}

@@ -1,0 +1,1 @@
+$(document).ready(function(){var o=["Язык программирования","Язык верстки","Язык стилей","Плагин","Инструмент","Другое"];$(".circle-color").hover(function(){$(".text")[0].innerHTML=o[$(this).data("color")-1]})});

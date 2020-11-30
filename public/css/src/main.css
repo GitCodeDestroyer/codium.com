@@ -1,0 +1,245 @@
+/* DEFAULT STYLES */
+
+* {
+    border: 0;
+    margin: 0;
+    padding: 0;
+    outline: none;
+    list-style: none;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+
+body {
+    font: 300 18px 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding-left: 70px;
+    background: #F4F4FA;
+}
+
+html {
+    overflow: hidden;
+}
+
+s {
+    text-decoration: line-through;
+}
+
+h1, h2, h3 {
+    font-weight: 300;
+}
+
+.container {
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+/* SIDEBAR, LEFT NAVIGATION */
+
+.sidebar {
+    width: 70px;
+    height: 100%;
+    z-index: 10000000;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: linear-gradient(45deg, #FE8EC1, #FD767D);
+    transition: all .4s;
+    overflow-y: auto;
+    overflow-x: hidden;
+    box-shadow: 7px 0 20px rgba(0, 0, 0, .05);
+}
+
+.sidebar:hover {
+    width: 300px;
+}
+
+.sidebar .top img {
+    margin: 45px 0 0 0;
+    width: 50px;
+}
+
+.sidebar .center {
+    margin-top: calc((100vh - 450px) / 2);
+}
+
+.sidebar .center .icon {
+    height: 50px;
+    width: 70px;
+    display: block;
+    text-align: center;
+    line-height: 50px;
+    color: #FFFFFF;
+    font-size: 25px;
+    margin: 15px 0;
+}
+
+.sidebar .center a {
+    opacity: .7;
+    transition: all .3s;
+}
+
+.sidebar .center a:hover,
+.sidebar .center a.active {
+    opacity: 1;
+}
+
+.sidebar .center a.active .stick {
+    height: 2px;
+}
+
+.sidebar .stick {
+    width: 20px;
+    height: 1.5px;
+    position: absolute;
+    margin-left: 60px;
+    margin-top: -39.5px;
+    display: inline-block;
+    background: #FFFFFF;
+}
+
+.sidebar .center .descrypt {
+    position: absolute;
+    width: 300px;
+    color: #FFFFFF;
+    margin-left: 90px;
+    margin-top: -50px;
+}
+
+/* HEADER */
+
+.header {
+    color: #FFF;
+    padding: 4%;
+    height: 300px;
+    background: linear-gradient(45deg, #8F90EF, #6969E5);
+    /* background: linear-gradient(45deg, #16e092, #1ded7e); */
+    box-shadow: 0 7px 20px rgba(0, 0, 0, .05);
+}
+
+
+.header .account-nav {
+    height: 50px;
+    float: right;
+    padding: 0 4%;
+}
+
+.header .account-nav .icon {
+    float: left;
+    line-height: 50px;
+    font-size: 25px;
+}
+
+.header .account-nav img {
+    height: 40px;
+    width: 40px;
+    float: left;
+    background: #F2F3F5;
+    border-radius: 50%;
+    margin: 2.5px 10px 0 30px;
+}
+
+.header .account-nav .account {
+    line-height: 50px;
+    font-style: italic;
+}
+
+.header h1 {
+    max-width: 50%;
+}
+
+.controls {
+    right: 6vw;
+    position: absolute;
+}
+
+.controls a {
+    color: #FFFFFF;
+    font-size: 40px;
+    margin-top: -10px;
+    display: inline-block;
+}
+
+/* COURSES SECTION */
+
+.content {
+    left: 70px;
+    width: calc(100vw - 70px);
+    height: 475px;
+    margin-top: -140px;
+}
+
+.courses {
+    padding: 55px 30px;
+    height: 440px;
+    width: calc(12 * (300px + 50px) + 60px);
+    overflow: visible;
+}
+
+.course {
+    float: left;
+    margin: 0 25px;
+    width: 300px;
+    height: 400px;
+    border-radius: 5px;
+    background: #FFFFFF;
+    box-shadow: 0 7px 20px rgba(0, 0, 0, .05);
+    transition: all .3s;
+    text-align: center;
+    color: #3C3F50;
+}
+
+.courses .course-link {
+    float: left;
+}
+
+.course:hover {
+    margin-top: -20px;
+}
+
+.course .icon {
+    border-radius: 50%;
+    width: 78px;
+    height: 78px;
+    margin: -25px auto 0px auto;
+    text-align: center;
+    color: #FFF;
+    line-height: 70px;
+    box-shadow: 0 7px 20px rgba(0, 0, 0, .2);
+}
+.course .icon img {
+    width: 50px;
+    margin: 12px 10px;
+}
+
+.course .icon.html {background: #F16529;border: 4px solid #E44D26}
+.course .icon.css {background: #33A9DC;border: 4px solid #1572B6}
+
+.course .text {
+    overflow: hidden;
+    height: 267px;
+    width: 260px;
+    margin: 0 auto;
+    box-shadow: 0 7px 20px rgba(255, 255, 255, .05) inset;
+}
+
+.course h1 {
+    margin-top: 15px;
+    font-size: 30px;
+}
+
+.course p {
+    margin-top: 20px;
+    font-size: 18px;
+}
+
+.course .btn {
+    width: 200px;
+    display: block;
+    margin: 20px 50px;
+    border-radius: 50px;
+    text-align: center;
+    color: #FFF;
+    background: #FD767D;
+    padding: 8px 0;
+    box-shadow: 0 7px 20px rgba(0, 0, 0, .05);
+}

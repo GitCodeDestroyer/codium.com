@@ -21,7 +21,7 @@ class CreateCoursesTable extends Migration
             $table->integer('difficulty');
             $table->integer('necessity');
             $table->integer('type');
-            $table->string('about');
+            $table->text('about');
             $table->timestamps();
         });
     }

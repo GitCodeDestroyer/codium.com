@@ -2,107 +2,144 @@
 
 @section('admin-content')
     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">@csrf</form>
-    <a href="#new" style="right: 3%;margin-top: 85px;color:#3C3F50;position: absolute;"><span class="pe-7s-plus"></span>
-        Новый курс</a>
     <h1>Данные курсов</h1>
-    <table>
-        <tbody>
-        <tr style="background: #DFDFDF;">
-            <th>Название</th>
-            <th>Короткое назв.</th>
-            <th>Длительность</th>
-            <th>Сложность</th>
-            <th>Необходимость</th>
-            <th>Тип курса</th>
-            <th>Короткое опис.</th>
-            <th>Кол-во уроков</th>
-            <th>Кол-во упражнений</th>
-            <th>Силлабус</th>
-        </tr>
-        {{-- Creating table rows with courses data. '$courses' - are passed from adminController --}}
-        @isset($courses)
+    @empty($courses)
+        <p>Курсы в БД не найдены</p>
+    @else
+        <table>
+            <tbody>
+            <tr style="background: #DFDFDF;">
+                <th>Название</th>
+                <th>Короткое назв.</th>
+                <th>Длительность</th>
+                <th>Сложность</th>
+                <th>Необходимость</th>
+                <th>Тип курса</th>
+                <th>Описание</th>
+            </tr>
+            {{-- Creating table rows with courses data. '$courses' - are passed from adminController --}}
             @foreach ($courses as $course)
-                @php
-                    // Creating arrays for changing values. The selected course have 'id', and this 'id' is key for this arrays
-                    $titleArray[] = $course->title;
-                    $nameArray[] = $course->name;
-                    $timeArray[] = $course->time;
-                    $difficArray[] = $course->diffic;
-                    $neededArray[] = $course->needed;
-                    $typeArray[] = $course->type;
-                    $aboutArray[] = $course->about;
-                    $aboutLongArray[] = $course->aboutLong;
-                    $lessonsArray[] = $course->lessons;
-                    $exercisesArray[] = $course->exercises;
-                    $syllabusArray[] = $course->syllabus;
-                @endphp
-                <tr class="row" data-id="{{ count($nameArray) }}">
+                <tr class="row" data-id="{{ count($courses) }}">
                     <th>{{ $course->title }}</th>
                     <th>{{ $course->name }}</th>
                     <th>{{ $course->time }}</th>
-                    <th>{{ $course->diffic }}</th>
-                    <th>{{ $course->needed }}</th>
-                    <th>{{ $course->type }}</th>
+                    <th>@switch($course->difficulty)
+                            @case(1)
+                                Легко
+                                @break
+                            @case(2)
+                                Среднее
+                                @break
+                            @case(3)
+                                Сложно
+                                @break
+                            @case(4)
+                                Очень Сложно
+                                @break
+                        @endswitch</th>
+                    <th>@switch($course->necessity)
+                            @case(1)
+                                Первостепенное
+                                @break
+                            @case(2)
+                                Не объязательное
+                                @break
+                            @case(3)
+                                Желательное
+                                @break
+                        @endswitch</th>
+                    <th>@switch($course->type)
+                            @case(1)
+                                Язык программирования
+                                @break
+                            @case(2)
+                                Язык верстки
+                                @break
+                            @case(3)
+                                Язык стилей
+                                @break
+                            @case(4)
+                                Плагин
+                                @break
+                            @case(5)
+                                Инструмент
+                                @break
+                            @case(6)
+                                Другое
+                                @break
+                        @endswitch</th>
                     <th>{{ $course->about }}</th>
-                    <th>{{ $course->lessons }}</th>
-                    <th>{{ $course->exercises }}</th>
-                    <th>{{ $course->syllabus }}</th>
                 </tr>
             @endforeach
-        @endisset
-        </tbody>
-    </table>
-    <div id="edit">
-        <h1>Изменить курс {{ $errors }}</h1>
-        <form method="POST" action="{{ url('admin/edit') }}">
-            @csrf
-            <label for="nameSelect">Выберите название</label><select name="NameSelect" id="nameSelect">
-                {{-- Creating courses options for select element --}}
-                @isset($nameArray)
-                    @for ($i = 0; $i < count($nameArray); $i++)
-                        <option id="opt-{{ $i }}" value="{{ $i }}">{{ $nameArray[$i] }}</option>
-                    @endfor
-                @endisset
-            </select>
-            <label for="title">Название</label><input type="text" id="title" name="title" placeholder="Название">
-            <label for="name">Короткое назв.</label><input type="text" id="name" name="name"
-                                                           placeholder="Короткое назв.">
-            <label for="time">Длительность</label><input type="text" id="time" name="time" placeholder="Длительность">
-            <label for="diffic">Сложность</label><input type="text" id="diffic" name="diffic" placeholder="Сложность">
-            <label for="needed">Необходимость</label><input type="text" id="needed" name="needed"
-                                                            placeholder="Необходимость">
-            <label for="type">Тип курса</label><input type="text" id="type" name="type" placeholder="Тип курса">
-            <label for="lessons">Кол-во уроков</label><input type="text" id="lessons" name="lessons"
-                                                             placeholder="Кол-во уроков">
-            <label for="exercises">Кол-во упражнений</label><input type="text" id="exercises" name="exercises"
-                                                                   placeholder="Кол-во упражнений">
-            <div class="clearfix"></div>
-            <label for="about">Короткое опис.</label><textarea type="text" id="about" name="about"
-                                                               placeholder="Короткое опис."></textarea>
-            <label for="aboutLong">Описание</label><textarea type="text" id="aboutLong" name="aboutLong"
-                                                             placeholder="Описание"></textarea>
-            <label for="syllabus">Силлабус</label><textarea type="text" id="syllabus" name="syllabus"
-                                                            placeholder="Силлабус"></textarea>
-            <button type="submit">Изменить</button>
-        </form>
-    </div>
+            </tbody>
+        </table>
+    @endempty
     <div id="new">
         <h1>Новый курс</h1>
-        <form method="POST" action="{{ url('admin/new') }}">
+        <form method="POST" action="{{ route('admin_store_new_course') }}">
             @csrf
-            <input type="text" id="title" name="newTitle" placeholder="Название">
-            <input type="text" id="name" name="newName" placeholder="Короткое назв.">
-            <input type="text" id="time" name="newTime" placeholder="Длительность">
-            <input type="text" id="diffic" name="newDiffic" placeholder="Сложность">
-            <input type="text" id="needed" name="newNeeded" placeholder="Необходимость">
-            <input type="text" id="type" name="newType" placeholder="Тип курса">
-            <input type="text" id="lessons" name="newLessons" placeholder="Кол-во уроков">
-            <input type="text" id="exercises" name="newExercises" placeholder="Кол-во упражнений">
-            <div class="clearfix"></div>
-            <textarea type="text" id="about" name="newAbout" placeholder="Короткое опис."></textarea>
-            <textarea type="text" id="aboutLong" name="newAboutLong" placeholder="Описание"></textarea>
-            <textarea type="text" id="syllabus" name="newSyllabus" placeholder="Силлабус"></textarea>
+            <div class="flex">
+                <div class="group">
+                    <input type="text" id="title" name="title" placeholder="Название">
+                    @error('title')
+                    <p>{{ $message }}</p>
+                    @enderror
+                </div>
+                <div class="group">
+                    <input type="text" id="name" name="name" placeholder="Короткое назв.">
+                    @error('name')
+                    <p>{{ $message }}</p>
+                    @enderror
+                </div>
+                <div class="group">
+                    <input type="time" id="time" name="time" placeholder="Длительность">
+                    @error('time')
+                    <p>{{ $message }}</p>
+                    @enderror
+                </div>
+                <div class="group">
+                    <select name="difficulty" id="difficulty">
+                        <option value="1">Легко</option>
+                        <option value="2">Среднее</option>
+                        <option value="3">Сложно</option>
+                        <option value="4">Очень Сложно</option>
+                    </select>
+                    @error('difficulty')
+                    <p>{{ $message }}</p>
+                    @enderror
+                </div>
+                <div class="group">
+                    <select name="type" id="type">
+                        <option value="1">Язык программирования</option>
+                        <option value="2">Язык верстки</option>
+                        <option value="3">Язык стилей</option>
+                        <option value="4">Плагин</option>
+                        <option value="5">Инструмент</option>
+                        <option value="6">Другое</option>
+                    </select>
+                    @error('type')
+                    <p>{{ $message }}</p>
+                    @enderror
+                </div>
+                <div class="group">
+                    <select name="necessity" id="necessity">
+                        <option value="1">Первостепенное</option>
+                        <option value="2">Не объязательное</option>
+                        <option value="3">Желательное</option>
+                    </select>
+                    @error('necessity')
+                    <p>{{ $message }}</p>
+                    @enderror
+                </div>
+            </div>
+            <div class="group">
+                <textarea type="text" id="about" name="about" placeholder="Короткое опис."></textarea>
+                @error('about')
+                    <p>{{ $message }}</p>
+                @enderror
+            </div>
             <button type="submit">Добавить</button>
+            <div class="clearfix"></div>
         </form>
     </div>
 @stop

@@ -4,6 +4,7 @@ namespace App\Models\Courses;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\DB;
 
 /**
  * Class Course
@@ -11,6 +12,19 @@ use Illuminate\Database\Eloquent\Model;
 class Course extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        'name',
+        'email',
+        'password',
+        'name',
+        'title',
+        'time',
+        'difficulty',
+        'necessity',
+        'type',
+        'about',
+    ];
 
     /**
      * Returns path to this course
@@ -29,30 +43,23 @@ class Course extends Model
      */
     public function getTable()
     {
-        return $this->table;
+        return DB::table('courses')->get();
     }
 
     /**
-     * Adds a new course
-     * @param $name
-     * @param $time
-     * @param $title
-     * @param $difficulty
-     * @param $need
-     * @param $type
-     * @param $about
-     * @return mixed
+     * @param $attributes
+     * @return Course[]|\Illuminate\Database\Eloquent\Collection|LaravelIdea\Helper\App\Models\Courses\_CourseCollection
      */
-    public function addCourse($name, $time, $title, $difficulty, $need, $type, $about)
+    public function addCourse($attributes)
     {
-        return factory(Course::class, 1)->create([
-            'name' => $name,
-            'time' => $time,
-            'title' => $title,
-            'difficulty' => $difficulty,
-            'need' => $need,
-            'type' => $type,
-            'about' => $about
+        return factory($this, 1)->create([
+            'name' => $attributes->name,
+            'time' => $attributes->time,
+            'title' => $attributes->title,
+            'difficulty' => $attributes->difficulty,
+            'need' => $attributes->need,
+            'type' => $attributes->type,
+            'about' => $attributes->about
         ]);
     }
 

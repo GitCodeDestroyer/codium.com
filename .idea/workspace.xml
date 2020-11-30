@@ -66,15 +66,16 @@
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\oybek\OSPanel\domains\codium.com\resources\views" />
-      <recent name="C:\oybek\OSPanel\domains\codium.com\app\Http\Controllers\Auth" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\oybek\OSPanel\domains\codium.com\app\Http\Controllers\Admin" />
+      <recent name="C:\oybek\OSPanel\domains\codium.com\app\Http\Controllers\Pages" />
       <recent name="C:\oybek\OSPanel\domains\codium.com\resources\views\pages\admin" />
       <recent name="C:\oybek\OSPanel\domains\codium.com\app\Models\Courses" />
       <recent name="C:\oybek\OSPanel\domains\codium.com\app\Models" />
-      <recent name="C:\oybek\OSPanel\domains\codium.com\app\Http\Controllers\Pages" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\oybek\OSPanel\domains\codium.com\resources\views" />
+      <recent name="C:\oybek\OSPanel\domains\codium.com\app\Http\Controllers\Auth" />
     </key>
   </component>
   <component name="RunManager" selected="npm.start">
@@ -152,10 +153,10 @@
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="530" y="209" key="#com.intellij.ide.scriptingContext.ui.PerFileMappingsDialogWrapper/0.0.1600.860@0.0.1600.860" timestamp="1605780634511" />
-    <state x="-915" y="145" key="#com.intellij.ide.util.MemberChooser" timestamp="1606570666578">
+    <state x="-915" y="145" key="#com.intellij.ide.util.MemberChooser" timestamp="1606748754234">
       <screen x="-1440" y="0" width="1440" height="860" />
     </state>
-    <state x="-915" y="145" key="#com.intellij.ide.util.MemberChooser/0.0.1600.860/-1440.0.1440.860@-1440.0.1440.860" timestamp="1606570666578" />
+    <state x="-915" y="145" key="#com.intellij.ide.util.MemberChooser/0.0.1600.860/-1440.0.1440.860@-1440.0.1440.860" timestamp="1606748754234" />
     <state x="575" y="120" key="#com.intellij.openapi.keymap.impl.ui.EditKeymapsDialog" timestamp="1605977596520">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
@@ -169,25 +170,25 @@
     </state>
     <state x="-918" y="184" key="FileChooserDialogImpl/0.0.1600.860/-1440.0.1440.860@-1440.0.1440.860" timestamp="1606663045038" />
     <state x="580" y="184" key="FileChooserDialogImpl/0.0.1600.860@0.0.1600.860" timestamp="1605780633932" />
-    <state width="1441" height="229" key="GridCell.Tab.0.bottom" timestamp="1606395545744">
+    <state width="1441" height="229" key="GridCell.Tab.0.bottom" timestamp="1606743590243">
       <screen x="-1440" y="0" width="1440" height="860" />
     </state>
-    <state width="1441" height="229" key="GridCell.Tab.0.bottom/0.0.1600.860/-1440.0.1440.860@-1440.0.1440.860" timestamp="1606395545744" />
+    <state width="1441" height="229" key="GridCell.Tab.0.bottom/0.0.1600.860/-1440.0.1440.860@-1440.0.1440.860" timestamp="1606743590243" />
     <state width="1601" height="235" key="GridCell.Tab.0.bottom/0.0.1600.860@0.0.1600.860" timestamp="1605887392066" />
-    <state width="1441" height="229" key="GridCell.Tab.0.center" timestamp="1606395545743">
+    <state width="1441" height="229" key="GridCell.Tab.0.center" timestamp="1606743590243">
       <screen x="-1440" y="0" width="1440" height="860" />
     </state>
-    <state width="1441" height="229" key="GridCell.Tab.0.center/0.0.1600.860/-1440.0.1440.860@-1440.0.1440.860" timestamp="1606395545743" />
+    <state width="1441" height="229" key="GridCell.Tab.0.center/0.0.1600.860/-1440.0.1440.860@-1440.0.1440.860" timestamp="1606743590243" />
     <state width="1601" height="235" key="GridCell.Tab.0.center/0.0.1600.860@0.0.1600.860" timestamp="1605887392065" />
-    <state width="1441" height="229" key="GridCell.Tab.0.left" timestamp="1606395545743">
+    <state width="1441" height="229" key="GridCell.Tab.0.left" timestamp="1606743590243">
       <screen x="-1440" y="0" width="1440" height="860" />
     </state>
-    <state width="1441" height="229" key="GridCell.Tab.0.left/0.0.1600.860/-1440.0.1440.860@-1440.0.1440.860" timestamp="1606395545743" />
+    <state width="1441" height="229" key="GridCell.Tab.0.left/0.0.1600.860/-1440.0.1440.860@-1440.0.1440.860" timestamp="1606743590243" />
     <state width="1601" height="235" key="GridCell.Tab.0.left/0.0.1600.860@0.0.1600.860" timestamp="1605887392065" />
-    <state width="1441" height="229" key="GridCell.Tab.0.right" timestamp="1606395545743">
+    <state width="1441" height="229" key="GridCell.Tab.0.right" timestamp="1606743590243">
       <screen x="-1440" y="0" width="1440" height="860" />
     </state>
-    <state width="1441" height="229" key="GridCell.Tab.0.right/0.0.1600.860/-1440.0.1440.860@-1440.0.1440.860" timestamp="1606395545743" />
+    <state width="1441" height="229" key="GridCell.Tab.0.right/0.0.1600.860/-1440.0.1440.860@-1440.0.1440.860" timestamp="1606743590243" />
     <state width="1601" height="235" key="GridCell.Tab.0.right/0.0.1600.860@0.0.1600.860" timestamp="1605887392065" />
     <state x="-994" y="152" key="NewPhpClassDialog" timestamp="1606398267979">
       <screen x="-1440" y="0" width="1440" height="860" />
@@ -206,15 +207,15 @@
       <screen x="-1440" y="0" width="1440" height="860" />
     </state>
     <state x="-1122" y="33" width="1058" height="870" key="dock-window-1/0.0.1600.860/-1440.0.1440.860@-1440.0.1440.860" timestamp="1606397229398" />
-    <state x="-1030" y="195" key="run.anything.popup" timestamp="1606488413609">
+    <state x="-1030" y="195" key="run.anything.popup" timestamp="1606742840131">
       <screen x="-1440" y="0" width="1440" height="860" />
     </state>
-    <state x="-1030" y="195" key="run.anything.popup/0.0.1600.860/-1440.0.1440.860@-1440.0.1440.860" timestamp="1606488413609" />
+    <state x="-1030" y="195" key="run.anything.popup/0.0.1600.860/-1440.0.1440.860@-1440.0.1440.860" timestamp="1606742840131" />
     <state x="456" y="195" key="run.anything.popup/0.0.1600.860@0.0.1600.860" timestamp="1605793423781" />
-    <state x="-1023" y="180" width="672" height="678" key="search.everywhere.popup" timestamp="1606738489556">
+    <state x="-1023" y="180" width="672" height="678" key="search.everywhere.popup" timestamp="1606754142488">
       <screen x="-1440" y="0" width="1440" height="860" />
     </state>
-    <state x="-1023" y="180" width="672" height="678" key="search.everywhere.popup/0.0.1600.860/-1440.0.1440.860@-1440.0.1440.860" timestamp="1606738489556" />
+    <state x="-1023" y="180" width="672" height="678" key="search.everywhere.popup/0.0.1600.860/-1440.0.1440.860@-1440.0.1440.860" timestamp="1606754142488" />
     <state x="463" y="180" width="672" height="678" key="search.everywhere.popup/0.0.1600.860@0.0.1600.860" timestamp="1606200213754" />
   </component>
 </project>

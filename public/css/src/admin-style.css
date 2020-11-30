@@ -203,18 +203,17 @@ body {
 
 /* CONTENT */
 
-.content {
+.admin-content {
     width: 78%;
-    height: 100%;
+    height: calc(100% - 60px);
     position: fixed;
     overflow-y: auto;
-    top: 0;
+    top: 60px;
     left: 22%;
     padding: 30px 2%;
 }
 
-
-.content h1 {
+.admin-content h1 {
     margin: 40px 0 20px 0;
 }
 
@@ -247,6 +246,12 @@ th {
     background: #F2F2F2;
 }
 
+.flex {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
 select,
 input,
 textarea,
@@ -254,19 +259,37 @@ button {
     font: 15px "Segoe UI Light", Tahoma, Verdana, Arial, sans-serif;;
     padding: 5px 10px;
     width: 300px;
-    margin: 20px auto;
     display: block;
     background: #FFF;
 }
 
-input {
+input,
+select {
     margin: 20px;
-    float: left;
-    display: inline-block;
 }
 
 textarea {
     width: 80%;
     height: 200px;
+    margin: 20px 10%;
     resize: vertical;
+}
+
+button {
+    color: #FFFFFF;
+    height: 40px;
+    border-radius: 40px;
+    background: #E9908A;
+    margin: 10px calc((100% - 300px) / 2);
+    margin-bottom: 50px;
+}
+
+form .group {
+    position: relative;
+}
+
+form p {
+    text-align: center;
+    margin-top: -15px;
+    color: #E9908A;
 }

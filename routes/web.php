@@ -1,8 +1,8 @@
 <?php
 
-use App\Http\Controllers\AdminController;
+use App\Http\Controllers\Admin\AdminController;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\HomeController;
+use App\Http\Controllers\Pages\HomeController;
 use App\Http\Controllers\Auth\LogoutController;
 use App\Http\Controllers\Pages\DashboardController;
 
@@ -32,6 +32,7 @@ Route::middleware('auth')->group(function() {
 
     Route::namespace('admin')->middleware('admin')->group(function() {
         Route::get('/admin', [AdminController::class, 'index'])->name('admin');
-        Route::get('/admin/new-course', [AdminController::class, 'newCourse'])->name('admin-new-course');
+        Route::get('/admin/new-course', [AdminController::class, 'show_new_course'])->name('admin_show_new_course');
+        Route::post('/admin/new-course', [AdminController::class, 'store_new_course'])->name('admin_store_new_course');
     });
 });

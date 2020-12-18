@@ -3,7 +3,7 @@
 @section('admin-content')
     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">@csrf</form>
     <h1>Данные курсов</h1>
-    @empty($courses)
+    @if($courses.'' == '[]')
         <p>Курсы в БД не найдены</p>
     @else
         <table>

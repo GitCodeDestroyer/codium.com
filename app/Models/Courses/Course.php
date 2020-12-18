@@ -8,11 +8,20 @@ use Illuminate\Support\Facades\DB;
 
 /**
  * Class Course
+ * @method where(string $string, $recent)
+ * @method get()
+ * @property mixed lessons = @method lessons()
+ * @property mixed exercises = @method exercises()
  */
 class Course extends Model
 {
     use HasFactory;
 
+    protected $guarded = [];
+
+    /**
+     * @var string[]
+     */
     protected $fillable = [
         'name',
         'email',
@@ -27,40 +36,24 @@ class Course extends Model
     ];
 
     /**
-     * Returns path to this course
      * @return string
      */
-    public function path()
-    {
-        if (isset($this->name)) {
-            return "/courses/{$this->name}";
-        }
-        return '';
-    }
-
-    /**
-     * @return string
-     */
-    public function getTable()
+    public static function table()
     {
         return DB::table('courses')->get();
     }
 
     /**
-     * @param $attributes
-     * @return Course[]|\Illuminate\Database\Eloquent\Collection|LaravelIdea\Helper\App\Models\Courses\_CourseCollection
+     * @return mixed|null
      */
-    public function addCourse($attributes)
+    public static function names()
     {
-        return factory($this, 1)->create([
-            'name' => $attributes->name,
-            'time' => $attributes->time,
-            'title' => $attributes->title,
-            'difficulty' => $attributes->difficulty,
-            'need' => $attributes->need,
-            'type' => $attributes->type,
-            'about' => $attributes->about
-        ]);
+        return DB::table('courses')->value('name');
+    }
+
+    public static function with_name($recent)
+    {
+        return (new Course())->where('name', $recent)->first();
     }
 
     /**
@@ -69,7 +62,7 @@ class Course extends Model
      * @param $about
      * @return mixed
      */
-    public function addLesson($name, $about)
+    public function add_lesson($name, $about)
     {
         return $this->lessons()->create(['name' => $name, 'about' => $about]);
     }
@@ -81,5 +74,13 @@ class Course extends Model
     public function lessons()
     {
         return $this->hasMany(Lesson::class, 'course_id');
+    }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasManyThrough
+     */
+    public function exercises()
+    {
+        return $this->hasManyThrough(Exercise::class, Lesson::class);
     }
 }

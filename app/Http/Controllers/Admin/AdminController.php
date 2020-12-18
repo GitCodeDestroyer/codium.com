@@ -27,6 +27,13 @@ class AdminController extends Controller
         ]);
     }
 
+    public function show_new_lesson(Course $course)
+    {
+        return view('pages.admin.new.lesson', [
+            'names' => $course->getNames()
+        ]);
+    }
+
     public function store_new_course(Request $request)
     {
         $validator = Validator::make($request->all(), [

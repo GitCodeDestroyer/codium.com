@@ -14,6 +14,13 @@ class Lesson extends Model
 {
     use HasFactory;
 
+    protected $guarded = [];
+
+    protected $fillable = [
+        'name',
+        'about'
+    ];
+
     /**
      * @return BelongsTo
      */
@@ -27,6 +34,6 @@ class Lesson extends Model
      */
     public function exercises()
     {
-        return $this->hasMany(Exercise::class, 'lesson_id');
+        return $this->hasMany(Exercise::class);
     }
 }
